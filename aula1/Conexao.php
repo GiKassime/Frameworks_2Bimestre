@@ -16,5 +16,5 @@ class Conexao {
     }
 }
 
-(new COnexao())->conectar();
+(new Conexao())->conectar();
 ?>
