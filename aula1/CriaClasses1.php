@@ -27,14 +27,18 @@ class CriaClasses1
             $sql = "show columns from ".$nomeTabela;
             $atributos = $this->con->query($sql)->fetchAll(PDO::FETCH_OBJ);
             $nomeAtributos="";
+            $getESetters = "";
             foreach($atributos as $atributo){
                 $nomeAtributos.="private \${$atributo->Field};\n";
+                $getESetters .="\npublic function get".ucfirst($atributo->Field)."(){\n  return \$this->{$atributo->Field};\n}\n";
+                $getESetters .="\npublic function set".ucfirst($atributo->Field)."(\${$atributo->Field}){\n  \$this->{$atributo->Field}=\${$atributo->Field};\n}\n";
             }
             $nomeTabela=ucfirst($nomeTabela);
             $conteudo = <<<EOT
 <?php
 class {$nomeTabela} {
 {$nomeAtributos}
+{$getESetters}
 }
 ?>
 EOT;    
