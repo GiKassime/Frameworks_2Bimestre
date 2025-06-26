@@ -9,6 +9,7 @@
 
 <body>
 <<<<<<< HEAD
+<<<<<<< HEAD
     <div class="container">
         <form action="creator.php" method="POST">
 
@@ -50,6 +51,8 @@
     </div>
 
 =======
+=======
+>>>>>>> 271eb9667fc27c6d1df654e2c0826af9fd13fab6
     <form action="creator.php" method="POST">
 
         <?php
@@ -86,6 +89,9 @@
 
         <button type="submit">Enviar</button>
     </form>
+<<<<<<< HEAD
+>>>>>>> 271eb9667fc27c6d1df654e2c0826af9fd13fab6
+=======
 >>>>>>> 271eb9667fc27c6d1df654e2c0826af9fd13fab6
 
 </body>

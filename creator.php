@@ -29,12 +29,15 @@ class Creator
         $this->ClasseConexao();
         $this->ClassesControl();
 <<<<<<< HEAD
+<<<<<<< HEAD
         $this->classesView();
         if (!$this->compactar()) {
             header("Location:index.php?msg=3");
         } 
         header("Location:index.php?msg=4");
         
+=======
+>>>>>>> 271eb9667fc27c6d1df654e2c0826af9fd13fab6
 =======
 >>>>>>> 271eb9667fc27c6d1df654e2c0826af9fd13fab6
     }
@@ -198,6 +201,7 @@ EOT;
         }
     }
 <<<<<<< HEAD
+<<<<<<< HEAD
 
     function compactar(){
         $folderToZip = 'sistema';
@@ -254,6 +258,8 @@ EOT;
         }
 
     }
+=======
+>>>>>>> 271eb9667fc27c6d1df654e2c0826af9fd13fab6
 =======
 >>>>>>> 271eb9667fc27c6d1df654e2c0826af9fd13fab6
 }
