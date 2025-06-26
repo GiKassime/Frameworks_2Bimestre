@@ -28,12 +28,15 @@ class Creator
         $this->ClassesModel();
         $this->ClasseConexao();
         $this->ClassesControl();
+<<<<<<< HEAD
         $this->classesView();
         if (!$this->compactar()) {
             header("Location:index.php?msg=3");
         } 
         header("Location:index.php?msg=4");
         
+=======
+>>>>>>> 271eb9667fc27c6d1df654e2c0826af9fd13fab6
     }
 
     function criaDiretorios()
@@ -194,6 +197,7 @@ EOT;
             file_put_contents("sistema/control/{$nomeTabela}Control.php", $conteudo);
         }
     }
+<<<<<<< HEAD
 
     function compactar(){
         $folderToZip = 'sistema';
@@ -250,6 +254,8 @@ EOT;
         }
 
     }
+=======
+>>>>>>> 271eb9667fc27c6d1df654e2c0826af9fd13fab6
 }
 
 new Creator();

@@ -11,6 +11,7 @@ form {
     background-color: white;
     padding: 20px 30px;
     border-radius: 10px;
+<<<<<<< HEAD
     border: 1px solid #ccc;
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
     width: 300px;
@@ -22,6 +23,11 @@ form {
     width: 100%;
 }
 
+=======
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    width: 300px;
+}
+>>>>>>> 271eb9667fc27c6d1df654e2c0826af9fd13fab6
 h2 {
     text-align: center;
     margin-bottom: 20px;
@@ -51,6 +57,7 @@ button {
 button:hover {
     background-color: #45a049;
 }
+<<<<<<< HEAD
 .mensagem_erro {
     background-color:  rgb(239, 142, 142);
     color: #000000;
@@ -71,4 +78,13 @@ button:hover {
     width: 100%;
     text-align: center;
     box-shadow: 0 0 5px rgba(0,0,0,0.1);
+=======
+#mensagem {
+    background-color: rgb(239, 142, 142);
+    border: 1px solid darkred;
+}   
+#info {
+    background-color: rgb(80, 156, 203);
+    border: 1px solid rgb(2, 0, 139);
+>>>>>>> 271eb9667fc27c6d1df654e2c0826af9fd13fab6
 }
