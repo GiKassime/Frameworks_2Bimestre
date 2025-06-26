@@ -11,9 +11,17 @@ form {
     background-color: white;
     padding: 20px 30px;
     border-radius: 10px;
+    border: 1px solid #ccc;
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
     width: 300px;
 }
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
 h2 {
     text-align: center;
     margin-bottom: 20px;
@@ -43,8 +51,24 @@ button {
 button:hover {
     background-color: #45a049;
 }
-
-#mensagem {
-    background-color: rgb(253, 142, 142);
-    border: 2px solid red;
+.mensagem_erro {
+    background-color:  rgb(239, 142, 142);
+    color: #000000;
+    border: 1px solid  1px solid darkred;
+    padding: 10px 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    width: 100%;
+    text-align: center;
+    box-shadow: 0 0 5px rgba(0,0,0,0.1);
+}   
+.mensagem {
+    background-color: rgb(80, 156, 203);
+    border: 1px solid rgb(2, 0, 139);
+    padding: 10px 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    width: 100%;
+    text-align: center;
+    box-shadow: 0 0 5px rgba(0,0,0,0.1);
 }

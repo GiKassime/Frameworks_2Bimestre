@@ -1,5 +1,6 @@
 <?php
-class Cidade {
+class Cidade 
+{
 	private $id;
 	private $nome;
 	private $habitantes;

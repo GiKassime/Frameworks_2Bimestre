@@ -1,5 +1,6 @@
 <?php
-class Estado {
+class Estado 
+{
 	private $id;
 	private $nome;
 	private $sigla;
