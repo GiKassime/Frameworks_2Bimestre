@@ -8,10 +8,8 @@
 </head>
 
 <body>
-<<<<<<< HEAD
-<<<<<<< HEAD
     <div class="container">
-        <form action="creator.php" method="POST">
+        <form action="index.php?mostrar=1" method="POST">
 
             <?php
             ini_set('display_errors', 1);
@@ -19,6 +17,7 @@
             error_reporting(E_ALL);
             //sempre coloco isso para mostrar os erros
             include "mensagem.php";
+            require_once "models/Conexao.php";
             if (isset($_GET['msg'])) //quando a variavel for 0, ela é lida como false;
             {
                 $classe = $_GET['msg'] == 3 ? "mensagem_erro" : "mensagem";
@@ -32,68 +31,49 @@
             <h1>EasyMVC</h1>
             <h2>Configuração</h2>
             <label for="servidor">Servidor:</label>
-            <input type="text" id="servidor" name="servidor" required>
-
-            <label for="banco">Banco de Dados:</label>
-            <input type="text" id="banco" name="banco" required>
+            <input type="text" id="servidor" name="servidor"  value="<?= isset($_POST['servidor']) ? $_POST['servidor']  : null ?>" required>
 
             <label for="porta">Porta:</label>
-            <input type="number" id="porta" name="porta" required>
+            <input type="number" id="porta" name="porta"   value="<?= isset($_POST['porta']) ? $_POST['porta']  : null ?>"required>
 
             <label for="usuario">Usuário:</label>
-            <input type="text" id="usuario" name="usuario" required>
+            <input type="text" id="usuario" name="usuario" value="<?= isset($_POST['usuario']) ? $_POST['usuario']  : null ?>" required>
 
             <label for="senha">Senha:</label>
-            <input type="password" id="senha" name="senha">
+            <input type="password" id="senha" name="senha"  value="<?= isset($_POST['senha']) ? $_POST['senha']  : null ?>">
 
-            <button type="submit">Enviar</button>
+            <?php 
+
+            if (isset($_GET['mostrar']) && $_GET['mostrar'] == 1) {
+                $conexao = new Conexao($_POST['servidor'], $_POST['porta'], $_POST['usuario'], $_POST['senha']);
+                try {
+                    $sql = "SHOW DATABASES";
+                    $conn = $conexao->conectar();
+                    $stmt = $conn->prepare($sql);
+                    $query = $conexao->query($sql);
+                    $bancos= $query->fetchAll(PDO::FETCH_ASSOC);
+                } catch (Exception $e) {
+                    header("Location:index.php?msg=1&info=" . urlencode($e->getMessage()));
+                }
+                echo "<select name='banco' id='banco'>";
+                foreach ($bancos as $key => $banco) {
+                    $nomeBanco = array_values((array) $banco)[0];
+                    echo "<option value='{$nomeBanco}'>{$nomeBanco}</option>";
+                }
+                echo "</select>";
+
+            }
+                
+            ?>
+
+            <button type="submit" onsubmit="carregarDB()">Enviar</button>
         </form>
     </div>
-
-=======
-=======
->>>>>>> 271eb9667fc27c6d1df654e2c0826af9fd13fab6
-    <form action="creator.php" method="POST">
-
-        <?php
-        ini_set('display_errors', 1);
-        ini_set('display_startup_erros', 1);
-        error_reporting(E_ALL);
-        //sempre coloco isso para mostrar os erros
-        include "erros.php";
-        if (isset($_GET['msg'])) //quando a variavel for 0, ela é lida como false;
-        {
-            echo "<div id='mensagem'>" . ($mensagens[$_GET['msg']] ?? "Erro desconhecido") . "</div>";
-            if ($_GET['info']) { //para saber mais sobre o erro caso tver descrição
-                echo "<div id='info'>" . $_GET['info'] . "</div>";
-            }
+    <script>
+        function carregarDB(){
+            
         }
-        ?>
-
-        <h1>EasyMVC</h1>
-        <h2>Configuração</h2>
-        <label for="servidor">Servidor:</label>
-        <input type="text" id="servidor" name="servidor" required>
-
-        <label for="banco">Banco de Dados:</label>
-        <input type="text" id="banco" name="banco" required>
-
-        <label for="porta">Porta:</label>
-        <input type="number" id="porta" name="porta" required> 
-
-        <label for="usuario">Usuário:</label>
-        <input type="text" id="usuario" name="usuario" required> 
-
-        <label for="senha">Senha:</label>
-        <input type="password" id="senha" name="senha">
-
-        <button type="submit">Enviar</button>
-    </form>
-<<<<<<< HEAD
->>>>>>> 271eb9667fc27c6d1df654e2c0826af9fd13fab6
-=======
->>>>>>> 271eb9667fc27c6d1df654e2c0826af9fd13fab6
-
+    </script>
 </body>
 
 </html>
