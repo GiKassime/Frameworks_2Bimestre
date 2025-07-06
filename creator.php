@@ -252,7 +252,7 @@ form {
     box-shadow: 0 0 12px rgba(0,0,0,0.08);
     width: 100%;
     max-width: 370px;
-    margin: 0 auto 24px auto;
+    margin:auto 24px auto;
 }
 
 h1 {
