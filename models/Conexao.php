@@ -1,4 +1,3 @@
-
 <?php
 class Conexao {
     private $servidor;
@@ -11,16 +10,16 @@ class Conexao {
         $this->usuario = $usuario;
         $this->senha = $senha;
     }
-    function conectar() {
+    function conectarDb() {
         try {
             $conn = new PDO(
-                "mysql:host=" . $this->servidor . ";,port=" . $this->porta . ";",
+                "mysql:host=" . $this->servidor . ";port=" . $this->porta . ";",
                 $this->usuario,
                 $this->senha
             );
             return $conn;
         } catch (Exception $e) {
-            header("Location:index.php?msg=1");
+            header("Location:index.php?msg=1&info=" . urlencode($e->getMessage()));
         }
     }
 }

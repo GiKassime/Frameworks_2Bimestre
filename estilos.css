@@ -1,73 +1,131 @@
-
 body {
     font-family: Arial, sans-serif;
     background-color: #f2f2f2;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
     display: flex;
+    align-items: flex-start;
     justify-content: center;
-    align-items: center;
-    height: 100vh;
 }
-form {
-    background-color: white;
-    padding: 20px 30px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    width: 300px;
-}
+
 .container {
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 100%;
+    max-width: 400px;
+    margin-top: 40px;
 }
-.mensagem{
-    background-color:#00c3fe;
-    color: #0000bf;
-    border: 1px solid #0000bf;
-    padding: 10px 15px;
-    border-radius: 8px;
-    margin-bottom: 20px;
+
+form {
+    background-color: white;
+    padding: 24px 18px;
+    border-radius: 12px;
+    box-shadow: 0 0 12px rgba(0,0,0,0.08);
     width: 100%;
-    text-align: center;
-    box-shadow: 0 0 5px rgba(0,0,0,0.1);
+    max-width: 370px;
+    margin: 0 auto 24px auto;
 }
+
+.mensagens
+
+.mensagem,
+.mensagem_erro, .mensagem_info {
+    display: block;
+    background-color: #e6f7ff;
+    color: #005c99;
+    border: 1px solid #b3e0ff;
+    padding: 12px 18px;
+    border-radius: 8px;
+    margin-bottom: 18px;
+    max-width: 370px;
+    text-align: center;
+    box-shadow: 0 0 5px rgba(0,0,0,0.08);
+    font-size: 1rem;
+    margin-left: auto;
+    margin-right: auto;
+        margin: 0 auto 24px auto;
+
+}
+
 .mensagem_erro {
     background-color: #ffe0e0;
     color: #a70000;
     border: 1px solid #ffaaaa;
-    padding: 10px 15px;
-    border-radius: 8px;
-    margin-bottom: 20px;
-    width: 100%;
-    text-align: center;
-    box-shadow: 0 0 5px rgba(0,0,0,0.1);
 }
-h2 {
-    text-align: center;
-    margin-bottom: 20px;
+.mensagem_info {
+    background-color: #fff2bd;
+    color: #eeee7e;
+    border: 1px solid #ffe851;
+    color: #6f6400 ;
 }
+h1, h2 {
+    text-align: center;
+    margin-bottom: 12px;
+}
+
 label {
     display: block;
     margin-bottom: 5px;
-    margin-top: 15px;
+    margin-top: 14px;
+    font-weight: bold;
+    color: #333;
 }
+
 input[type="text"],
-input[type="password"] {
+input[type="password"],
+input[type="number"],
+select {
     width: 100%;
-    padding: 8px;
+    padding: 9px;
+    margin-bottom: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
     box-sizing: border-box;
+    background-color: #fafafa;
+    transition: border-color 0.2s;
 }
+
+input:focus,
+select:focus {
+    border-color: #4CAF50;
+    outline: none;
+}
+
 button {
-    margin-top: 20px;
+    margin-top: 18px;
     width: 100%;
-    padding: 10px;
+    padding: 11px;
     background-color: #4CAF50;
     border: none;
     color: white;
-    font-size: 16px;
+    font-size: 1.08rem;
     border-radius: 5px;
     cursor: pointer;
+    transition: background 0.2s;
 }
+
 button:hover {
     background-color: #45a049;
+}
+
+.esconde {
+    display: none;
+}
+.mostra {
+    display: block;
+}
+
+@media (max-width: 500px) {
+    .container, .mensagens, form {
+        max-width: 98vw;
+        width: 98vw;
+        padding-left: 2vw;
+        padding-right: 2vw;
+    }
+    form {
+        padding: 18px 4vw;
+    }
 }
